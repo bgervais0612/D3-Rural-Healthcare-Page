@@ -1412,7 +1412,7 @@
                         return yScale2(d.Proficient);
                     })
                     .attr("r",4)
-                    .style("fill","blue");
+                    .style("fill","#b30000");
 
                 plot4.selectAll(".basic-points")
                     .data(data)
@@ -1426,7 +1426,7 @@
                         return yScale2(d.Basic);
                     })
                     .attr("r",4)
-                    .style("fill","#b30000");
+                    .style("fill","blue");
 
                 var PathGen1 = d3.svg.line()
                     .x(function(d,i) {return (i*(bar_width+1) + offset+(bar_width/2));})
