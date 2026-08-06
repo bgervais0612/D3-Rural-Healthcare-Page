@@ -5964,7 +5964,7 @@
                         return yScale2(d.Proficient);
                     })
                     .attr("r",4)
-                    .style("fill","blue");
+                    .style("fill","#b30000");
 
                 plot4.selectAll(".basic-points")
                     .data(data)
@@ -5978,7 +5978,7 @@
                         return yScale2(d.Basic);
                     })
                     .attr("r",4)
-                    .style("fill","#b30000");
+                    .style("fill","blue");
 
                 var PathGen1 = d3.svg.line()
                     .x(function(d,i) {return (i*(bar_width+1) + offset+(bar_width/2));})
@@ -5991,12 +5991,12 @@
 
                 plot4.append("path")
                     .attr("class","line")
-                    .style("stroke","blue")
+                    .style("stroke","#b30000")
                     .attr("d",PathGen1(data));
 
                 plot4.append("path")
                     .attr("class","line")
-                    .style("stroke","#b30000")
+                    .style("stroke","blue")
                     .attr("d",PathGen2(data))
 
                 plot4.append("text")
@@ -6005,10 +6005,22 @@
                     .text("Percent (%)");
 
                 plot4.append("text")
+                    .attr("class","axis_labels")
+                    .attr("x",-offset-(plot_h/2))
+                    .attr("y",40)
+                    .attr("transform","rotate(-90)")
+                    .text("Physicians per Capita");
+
+                plot4.append("text")
                     .attr("class","plot_titles")
                     .attr("x",offset + (plot_w/2))
                     .attr("y",50)
                     .text("Physicians per Capita vs. Proficiency Levels")
+
+                plot4.append("text")
+                    .attr("x",offset + (plot_w/2))
+                    .attr("y",plot_h + offset + 100)
+                    .text("State")
 
                 legend4 = plot4.append("g")
                     .attr("class","legend4")
